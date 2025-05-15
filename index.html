@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Book</h1>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <label>Title:</label>
+        <input type="text" name="book_title" required>
+
+        <label>Author:</label>
+        <input type="text" name="author_name" required>
+
+        <label>Cover:</label>
+        <input type="file" name="book_cover">
+
+        <label>Genre:</label>
+        <select name="genre">
+            <option value="Fiction">Fiction</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+        </select>
+
+        <label>Year:</label>
+        <input type="number" name="publication_year" min="1900" max="2099">
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity" min="1">
+
+        <button type="submit">Add Book</button>
+    </form>
+
+    <a href="list.php"> View Book List</a>
+</body>
+</html>
